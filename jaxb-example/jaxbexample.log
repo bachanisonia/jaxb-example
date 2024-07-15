@@ -1,0 +1,419 @@
+2024-04-23T11:43:26.265+01:00  INFO 29280 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 29280 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T11:43:26.274+01:00  INFO 29280 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T11:43:28.401+01:00  INFO 29280 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 3.43 seconds (process running for 4.26)
+2024-04-23T11:43:28.450+01:00  INFO 29280 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T11:43:28.524+01:00 ERROR 29280 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:17) ~[classes/:na]
+Caused by: javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:278) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:421) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:721) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:662) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:28) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:22) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.sun.xml.internal.bind.v2.ContextFactory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at javax.xml.bind.ServiceLoaderUtil.nullSafeLoadClass(ServiceLoaderUtil.java:122) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ServiceLoaderUtil.safeLoadClass(ServiceLoaderUtil.java:155) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:276) ~[jaxb-api-2.3.0.jar:2.3.0]
+	... 25 common frames omitted
+
+2024-04-23T11:44:33.011+01:00  INFO 17472 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 17472 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T11:44:33.017+01:00  INFO 17472 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T11:44:34.375+01:00  INFO 17472 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.17 seconds (process running for 2.926)
+2024-04-23T11:44:34.408+01:00  INFO 17472 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T11:44:34.455+01:00 ERROR 17472 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:17) ~[classes/:na]
+Caused by: javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:278) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:421) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:721) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:662) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:28) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:22) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.sun.xml.internal.bind.v2.ContextFactory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at javax.xml.bind.ServiceLoaderUtil.nullSafeLoadClass(ServiceLoaderUtil.java:122) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ServiceLoaderUtil.safeLoadClass(ServiceLoaderUtil.java:155) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:276) ~[jaxb-api-2.3.0.jar:2.3.0]
+	... 25 common frames omitted
+
+2024-04-23T11:46:28.868+01:00  INFO 34884 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 34884 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T11:46:28.875+01:00  INFO 34884 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T11:46:30.026+01:00  INFO 34884 --- [jaxb-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.learnjava.springboot.model.Book com.learnjava.springboot.service.JaxbService.book1
+2024-04-23T11:46:30.319+01:00  INFO 34884 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.275 seconds (process running for 3.037)
+2024-04-23T11:46:30.357+01:00  INFO 34884 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T11:46:30.417+01:00 ERROR 34884 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:16) ~[classes/:na]
+Caused by: javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:278) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:421) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:721) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:662) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:28) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:21) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.sun.xml.internal.bind.v2.ContextFactory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at javax.xml.bind.ServiceLoaderUtil.nullSafeLoadClass(ServiceLoaderUtil.java:122) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ServiceLoaderUtil.safeLoadClass(ServiceLoaderUtil.java:155) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:276) ~[jaxb-api-2.3.0.jar:2.3.0]
+	... 25 common frames omitted
+
+2024-04-23T11:53:18.197+01:00  INFO 1432 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 1432 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T11:53:18.203+01:00  INFO 1432 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T11:53:19.352+01:00  INFO 1432 --- [jaxb-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.learnjava.springboot.model.Book com.learnjava.springboot.service.JaxbService.book1
+2024-04-23T11:53:19.610+01:00  INFO 1432 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.335 seconds (process running for 3.114)
+2024-04-23T11:53:19.641+01:00  INFO 1432 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T11:53:19.687+01:00 ERROR 1432 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:16) ~[classes/:na]
+Caused by: javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:278) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:421) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:721) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:662) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:28) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:21) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.sun.xml.internal.bind.v2.ContextFactory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at javax.xml.bind.ServiceLoaderUtil.nullSafeLoadClass(ServiceLoaderUtil.java:122) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ServiceLoaderUtil.safeLoadClass(ServiceLoaderUtil.java:155) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:276) ~[jaxb-api-2.3.0.jar:2.3.0]
+	... 25 common frames omitted
+
+2024-04-23T11:54:42.439+01:00  INFO 7620 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 7620 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T11:54:42.444+01:00  INFO 7620 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T11:54:44.051+01:00  INFO 7620 --- [jaxb-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.learnjava.springboot.model.Book com.learnjava.springboot.service.JaxbService.book1
+2024-04-23T11:54:44.474+01:00  INFO 7620 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 3.521 seconds (process running for 4.669)
+2024-04-23T11:54:44.507+01:00  INFO 7620 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T11:54:44.573+01:00 ERROR 7620 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:16) ~[classes/:na]
+Caused by: javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:278) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:421) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:721) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:662) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:28) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:21) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.sun.xml.internal.bind.v2.ContextFactory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at javax.xml.bind.ServiceLoaderUtil.nullSafeLoadClass(ServiceLoaderUtil.java:122) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ServiceLoaderUtil.safeLoadClass(ServiceLoaderUtil.java:155) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:276) ~[jaxb-api-2.3.0.jar:2.3.0]
+	... 25 common frames omitted
+
+2024-04-23T11:56:16.044+01:00  INFO 33288 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 33288 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T11:56:16.051+01:00  INFO 33288 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T11:56:17.203+01:00  INFO 33288 --- [jaxb-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.learnjava.springboot.model.Book com.learnjava.springboot.service.JaxbService.book1
+2024-04-23T11:56:17.826+01:00  INFO 33288 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.636 seconds (process running for 3.449)
+2024-04-23T11:56:17.873+01:00  INFO 33288 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T11:56:17.939+01:00 ERROR 33288 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:16) ~[classes/:na]
+Caused by: javax.xml.bind.JAXBException: jaxb.properties in package file:/C:/Users/sonia/Documents/workspace/jaxb-example/target/classes/com/learnjava/springboot/model does not contain the javax.xml.bind.JAXBContextFactory property.
+	at javax.xml.bind.ContextFinder.classNameFromPackageProperties(ContextFinder.java:442) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:387) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:721) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:662) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:28) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:21) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	... 17 common frames omitted
+
+2024-04-23T11:57:14.175+01:00  INFO 21160 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 21160 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T11:57:14.183+01:00  INFO 21160 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T11:57:15.385+01:00  INFO 21160 --- [jaxb-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.learnjava.springboot.model.Book com.learnjava.springboot.service.JaxbService.book1
+2024-04-23T11:57:15.666+01:00  INFO 21160 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.462 seconds (process running for 3.166)
+2024-04-23T11:57:15.705+01:00  INFO 21160 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T11:57:15.788+01:00 ERROR 21160 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:16) ~[classes/:na]
+Caused by: javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:278) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:391) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:721) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:662) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:28) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:21) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	... 17 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.eclipse.persistence.jaxb.JAXBContextFactory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at javax.xml.bind.ServiceLoaderUtil.nullSafeLoadClass(ServiceLoaderUtil.java:122) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ServiceLoaderUtil.safeLoadClass(ServiceLoaderUtil.java:155) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.newInstance(ContextFinder.java:276) ~[jaxb-api-2.3.0.jar:2.3.0]
+	... 25 common frames omitted
+
+2024-04-23T11:57:33.819+01:00  INFO 244 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 244 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T11:57:33.823+01:00  INFO 244 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T11:57:34.886+01:00  INFO 244 --- [jaxb-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.learnjava.springboot.model.Book com.learnjava.springboot.service.JaxbService.book1
+2024-04-23T11:57:35.161+01:00  INFO 244 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.409 seconds (process running for 3.205)
+2024-04-23T11:57:35.194+01:00  INFO 244 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T11:57:35.234+01:00 ERROR 244 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:16) ~[classes/:na]
+Caused by: javax.xml.bind.JAXBException: jaxb.properties in package file:/C:/Users/sonia/Documents/workspace/jaxb-example/target/classes/com/learnjava/springboot/model does not contain the javax.xml.bind.JAXBContextFactory property.
+	at javax.xml.bind.ContextFinder.classNameFromPackageProperties(ContextFinder.java:442) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.ContextFinder.find(ContextFinder.java:387) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:721) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at javax.xml.bind.JAXBContext.newInstance(JAXBContext.java:662) ~[jaxb-api-2.3.0.jar:2.3.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:28) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:21) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	... 17 common frames omitted
+
+2024-04-23T13:41:31.181+01:00  INFO 27560 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 27560 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T13:41:31.185+01:00  INFO 27560 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T13:41:32.249+01:00  INFO 27560 --- [jaxb-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.learnjava.springboot.model.Book com.learnjava.springboot.service.JaxbService.book1
+2024-04-23T13:41:32.521+01:00  INFO 27560 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.194 seconds (process running for 2.857)
+2024-04-23T13:42:32.141+01:00  INFO 7716 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 7716 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T13:42:32.145+01:00  INFO 7716 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T13:42:33.260+01:00  INFO 7716 --- [jaxb-example] [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.learnjava.springboot.model.Book com.learnjava.springboot.service.JaxbService.book1
+2024-04-23T13:42:33.498+01:00  INFO 7716 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.158 seconds (process running for 2.861)
+2024-04-23T13:42:33.715+01:00  INFO 7716 --- [jaxb-example] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-04-23T13:42:33.760+01:00 ERROR 7716 --- [jaxb-example] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalArgumentException: jaxbElement parameter must not be null
+	at jakarta.xml.bind.helpers.AbstractMarshallerImpl.checkNotNull(AbstractMarshallerImpl.java:438) ~[jakarta.xml.bind-api-4.0.0.jar:4.0.0]
+	at jakarta.xml.bind.helpers.AbstractMarshallerImpl.marshal(AbstractMarshallerImpl.java:91) ~[jakarta.xml.bind-api-4.0.0.jar:4.0.0]
+	at com.learnjava.springboot.service.JaxbService.marshal(JaxbService.java:40) ~[classes/:na]
+	at com.learnjava.springboot.JaxbExampleApplication.run(JaxbExampleApplication.java:21) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88) ~[spring-core-6.1.6.jar:6.1.6]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[na:na]
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:341) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.5.jar:3.2.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.5.jar:3.2.5]
+	at com.learnjava.springboot.JaxbExampleApplication.main(JaxbExampleApplication.java:16) ~[classes/:na]
+
+2024-04-23T13:44:17.549+01:00  INFO 25056 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 25056 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T13:44:17.554+01:00  INFO 25056 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T13:44:18.847+01:00  INFO 25056 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.132 seconds (process running for 2.974)
+2024-04-23T13:44:52.135+01:00  INFO 27808 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Starting JaxbExampleApplication using Java 17.0.9 with PID 27808 (C:\Users\sonia\Documents\workspace\jaxb-example\target\classes started by sonia in C:\Users\sonia\Documents\workspace\jaxb-example)
+2024-04-23T13:44:52.139+01:00  INFO 27808 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-04-23T13:44:53.545+01:00  INFO 27808 --- [jaxb-example] [main] c.l.springboot.JaxbExampleApplication    : Started JaxbExampleApplication in 2.373 seconds (process running for 3.145)
